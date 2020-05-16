@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang= 'en'>
+    <head>
+        <meta charset="utf-8">
+        <meta name= 'viewport' content="width=device-width, initial-scale =2">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>
+            {% block title %}
+                Startup Organizer
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'blog_post_list' %}">Blog</a>
+                </li>
+                <li>
+                    <a href="{% url 'organiser_tag_list' %}">Tag</a>
+                </li>
+                <li>
+                    <a href="{% url 'organiser_startup_list' %}">Startups</a>
+                </li>
+            </ul>
+        </nav>
+        <div><!--container-->
+            <header>
+                <h1>Startup Organizer</h1>
+            </header>
+            <main>
+                {% block content %}
+                The deafault content
+                {% endblock %}
+            </main>
+        </div>
+        <footer>
+            <p>
+                &copy; 2015
+                <a href = "https://andrewforge.com/">
+                Andrew Pinkham</a>
+            </p>
+            <p>
+                Created for
+                <a href= 'https://django-unleashed.com/'>
+                Django Unleashed</a>
+            </p>
+        </footer>
+    </body>    
+</html>

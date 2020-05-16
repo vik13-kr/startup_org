@@ -1,0 +1,10 @@
+
+created two apps within the projects.
+-> blog
+-> organiser
+
+Blog
+ define the model
+->Post
+     
+

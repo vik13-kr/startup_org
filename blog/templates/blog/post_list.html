@@ -1,0 +1,21 @@
+{% extends parent_template|default:'blog/base_blog.html' %}
+{% block title %}
+{{block.super}} - Posts List
+{% endblock %}
+
+{% block content %}
+<div>
+    <a href="{% url 'blog_post_create' %}">Write New Blog Post</a>
+</div>
+<h2> Post List </h2>
+<ul>
+    {% for post in post_list %}
+    <li>   <!-- {% url 'blog_post_detail' post.pub_date.year post.pub_date.month post.slug %} -->
+        <a href = "{{ post.get_absolute_url }}">
+        {{post.name|title}}</a>
+    </li>
+    {% empty %}
+    <li> There are no post made yet. </li>
+    {% endfor %}
+</ul>
+{% endblock %}

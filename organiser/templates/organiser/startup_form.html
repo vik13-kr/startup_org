@@ -1,0 +1,17 @@
+{% extends parent_templat|default:"organiser/base_organizer.html" %}
+
+{% block title %}
+{{block.super}}- Startup Form
+{% endblock title %}
+
+{% block content %}
+<div>
+    <div>
+        <form action = "{% url 'organiser_startup_create' %}" method = 'post'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type = 'submit'> Create Startup </button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
